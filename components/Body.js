@@ -21,7 +21,7 @@ class Body extends Component {
       }
     );
 
-    document.body = this.element;
+    document.body = this.render();
   }
 }
 
