@@ -82,6 +82,10 @@ class TextField extends Component {
     });
 
     this.element.appendChild(textField);
+
+    if (this.defaultValue.length > 0) {
+      textField.focus();
+    }
   }
 
   buildLabel() {
