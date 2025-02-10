@@ -2,6 +2,10 @@ import Component from "../lib/Component.js";
 import { useTheme } from "../lib/useTheme.js";
 
 class Body extends Component {
+  /**
+   *
+   * @param {{children: Component[];}} props
+   */
   constructor(props) {
     const { children } = props;
 

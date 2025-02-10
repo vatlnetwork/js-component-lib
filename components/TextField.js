@@ -4,9 +4,14 @@ import { getCurrentTheme, useTheme } from "../lib/useTheme.js";
 class TextField extends Component {
   inputId;
   label;
+  defaultValue;
 
+  /**
+   *
+   * @param {{inputId: string; label: string; defaultValue: string;}} props
+   */
   constructor(props) {
-    const { inputId, label } = props;
+    const { inputId, label, defaultValue } = props;
 
     super(document.createElement("div"));
 
@@ -22,6 +27,12 @@ class TextField extends Component {
       this.label = label.toString();
     }
 
+    if (defaultValue == undefined || defaultValue == null) {
+      this.defaultValue = "";
+    } else {
+      this.defaultValue = defaultValue.toString();
+    }
+
     this.styleContainer();
     this.buildTextField();
     this.buildLabel();
@@ -35,6 +46,7 @@ class TextField extends Component {
   buildTextField() {
     const textField = document.createElement("input");
     textField.id = this.inputId;
+    textField.value = this.defaultValue;
 
     textField.style.border = "none";
     textField.style.padding = "8px 8px";

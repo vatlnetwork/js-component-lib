@@ -2,6 +2,16 @@ import Component from "../lib/Component.js";
 import { useTheme } from "../lib/useTheme.js";
 
 class Div extends Component {
+  /**
+   *
+   * @param {{
+   *  styles: CSSStyleDeclaration;
+   *  onclick: () => void;
+   *  children: Component[];
+   *  className: string;
+   *  darkStyles: CSSStyleDeclaration;
+   * }} props
+   */
   constructor(props) {
     const { styles, onclick, children, className, darkStyles } = props;
 
