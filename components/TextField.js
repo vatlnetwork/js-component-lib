@@ -36,6 +36,12 @@ class TextField extends Component {
     this.styleContainer();
     this.buildTextField();
     this.buildLabel();
+
+    const textField = this.element.getElementsByTagName("input")[0];
+
+    if (this.defaultValue.length > 0) {
+      textField.dispatchEvent(new Event("focusin"));
+    }
   }
 
   styleContainer() {
@@ -82,10 +88,6 @@ class TextField extends Component {
     });
 
     this.element.appendChild(textField);
-
-    if (this.defaultValue.length > 0) {
-      textField.focus();
-    }
   }
 
   buildLabel() {
